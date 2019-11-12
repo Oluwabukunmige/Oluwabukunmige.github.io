@@ -1,22 +1,10 @@
----
-title: "Web Scrapping Project"
-date: 2019-11-12
-tags: [web crawling, data science]
-header:
-  
- excerpt: "Data Wrangling, Data Science, Messy Data"
- mathjax: "true"
----
-
-
-
 
 ## Web scrapping
 
 This notebook contains final for the web scrapping article i wrote on medium. 
 It can be accessed here: https://medium.com/p/32b0ceeee538/edit
 
-import all the required modules
+Import all the required modules
 
 
 ```python
@@ -31,7 +19,7 @@ from random import randint
 from time import time
 ```
 
-specify the header, to ensure our requests are accepted
+Specify the header, to ensure our requests are accepted
 
 
 ```python
@@ -39,14 +27,14 @@ specify the header, to ensure our requests are accepted
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
 ```
 
-loop through pages 0 -10 at interval of 2
+Loop through pages 0 -10 at interval of 2
 
 
 ```python
 pages = [str(i) for i in range(0,10,2)]
 ```
 
-declare lists to stored scraped data
+Declare lists to stored scraped data
 
 
 ```python
@@ -57,7 +45,7 @@ meta_scores =[]
 user_scores = []
 ```
 
-prepare the monitoring loop
+Prepare the monitoring loop
 
 
 ```python
