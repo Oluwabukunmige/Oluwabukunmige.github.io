@@ -11,8 +11,15 @@ header:
 
 
 
+## Web scrapping
+
+This notebook contains final for the web scrapping article i wrote on medium. 
+It can be accessed here: https://medium.com/p/32b0ceeee538/edit
+
+import all the required modules
+
+
 ```python
-#import all the required modules
 import re
 import requests, bs4
 from requests import get
@@ -22,25 +29,47 @@ from warnings import warn
 from time import sleep
 from random import randint
 from time import time
+```
 
-#specify the header, to ensure our requests are accepted
+specify the header, to ensure our requests are accepted
+
+
+```python
+
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
+```
 
-#loop through pages 0 -10 at interval of 2
+loop through pages 0 -10 at interval of 2
+
+
+```python
 pages = [str(i) for i in range(0,10,2)]
+```
 
-#declare lists to stored scraped data
+declare lists to stored scraped data
+
+
+```python
 names = []
 release_dates = []
 ratings= []
 meta_scores =[]
 user_scores = []
+```
 
-#prepare the monitoring loop
+prepare the monitoring loop
+
+
+```python
 start_time = time()
 requests = 0
-        
-# iterate through the pages
+```
+
+Iterate through the pages
+
+
+```python
+
 for page in pages:
     
     #make a get request
@@ -91,8 +120,12 @@ for page in pages:
         #scrape the user scores.
         user_score = con.select('a.metascore_anchor div')[2].text
         user_scores.append(user_score)
+```
+
+Parse the data into a dataframe and store in a csv file
 
 
+```python
 import pandas as pd
 movie_df = pd.DataFrame({'Movie_names': names,
 'Release_dates': release_dates,
