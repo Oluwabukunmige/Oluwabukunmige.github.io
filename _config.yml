@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Ige Oluwabukunmi"
-  avatar           : "/images/Bukunmi.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/BK.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "Kaduna, Nigeria"
   email            :
